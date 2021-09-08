@@ -84,6 +84,14 @@ To help create the best quality video call, the Multiparty Toolkit will apply va
 
 To create a great user experience, the Multiparty Toolkit will optimize things on the client-side. For example, every participant after 10 is automatically muted to avoid very noisy rooms. When a displayed video gets smaller in size, a smaller stream is requested to help reduce the bandwidth needed for smooth playback.
 
+Example of a raw, unoptimized video session
+
+![Table showing the amount of bandwidth used for audio and video for 1 to 1, 10 videos, and 25 videos in unoptimized sessions](/content/blog/multiparty-toolkit-is-here-and-why-it’s-awesome/unoptimized-video-session.jpg "Table with data of an unoptimized multiparty video session")
+
+Example of an optimized multiparty video session
+
+![Table showing the amount of bandwidth used for audio and video for 1 to 1, 10 videos, and 25 videos in optimized sessions with as much as 80% lower bandwidth. ](/content/blog/multiparty-toolkit-is-here-and-why-it’s-awesome/optimized-video-session.jpg "Table with data of an optimized multiparty video session")
+
 # Layout Manager
 
 ![Demonstrating the layout changes of colored blocks representing video feeds as they are being added and removed to the screen.](/content/blog/multiparty-toolkit-is-here-and-why-it’s-awesome/layoutmanager.gif "Layout Manager diagram")
@@ -111,6 +119,6 @@ Take a look at the [Multiparty Toolkit documentation](https://tokbox.com/develop
 
 Play around with the [basic starter project](https://glitch.com/edit/#!/remix/multiparty-tookit-demo?path=README.md%3A1%3A0).
 
-Dive into a more complete [demo application using React](Link to blog post).
+Dive into a more complete \[demo application using React](Link to blog post).
 
 Show us what you are working on and give us any feedback in our [Community Slack Channel](https://developer.nexmo.com/slack).
