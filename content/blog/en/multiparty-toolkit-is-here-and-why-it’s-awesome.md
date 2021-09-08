@@ -62,14 +62,55 @@ session.publish(pub, undefined, err => { // Try to publish media
    resolve();
  }
 });
-
 ```
 
-Vonage Multiparty Toolkit
+**Vonage Multiparty Toolkit**
 
 ```javascript
 const room = new Room({ apiKey, sessionId, token, roomContainer: 'roomContainer’ });
 
 room.join();
-
 ```
+
+The Multiparty Toolkit handles all the publishing and subscribing of all the participants of the video call. Just tell it the id of the HTML element (in this example, "roomContainer") to place the "Room" into, join and that’s it. Read our [documentation](https://tokbox.com/developer/multiparty/) for more on what you can do with the toolkit.
+
+# Quality Manager
+
+![Graphic showing the larger video feed on the left with a higher resolution and more bitrate and a column of other smaller video feeds to the right with smaller resolution and bitrates.](/content/blog/multiparty-toolkit-is-here-and-why-it’s-awesome/qualitymanager.jpg "Quality Manager diagram")
+
+To help create the best quality video call, the Multiparty Toolkit will apply various methods automatically. These include maximizing tile sizes for visible video streams and pausing the ones that can’t be seen. It will also adjust resolution and frame rates depending on network conditions and CPU. By dynamically setting higher priorities on speakers and screen shares, the things that need the focus can achieve the best quality.
+
+# Experience Manager
+
+To create a great user experience, the Multiparty Toolkit will optimize things on the client-side. For example, every participant after 10 is automatically muted to avoid very noisy rooms. When a displayed video gets smaller in size, a smaller stream is requested to help reduce the bandwidth needed for smooth playback.
+
+# Layout Manager
+
+![Demonstrating the layout changes of colored blocks representing video feeds as they are being added and removed to the screen.](/content/blog/multiparty-toolkit-is-here-and-why-it’s-awesome/layoutmanager.gif "Layout Manager diagram")
+
+Out of the box, the Multiparty Toolkit will automatically adjust the layout of the streams based on screen size and the number of participants. Screen shares and the active speaker are given a higher priority or take up more space.
+
+# Preview Publisher
+
+Another feature that the Multiparty Toolkit handles for you is allowing the user to preview their video and audio before joining the room. Here is some sample code:
+
+```javascript
+const previewPublisher = new MP.PreviewPublisher('previewContainer');
+await previewPublisher.previewMedia({
+  targetElement: 'previewContainer',
+  publisherProperties: {
+    resolution: '1280x720',
+    audioBitrate: 15,
+  },
+});
+```
+
+Ready to build something amazing?!
+
+Take a look at the [Multiparty Toolkit documentation](https://tokbox.com/developer/multiparty/) for more details.
+
+Play around with the [basic starter project](https://glitch.com/edit/#!/remix/multiparty-tookit-demo?path=README.md%3A1%3A0).
+
+Dive into a more complete [demo application using React](Link to blog post).
+
+Show us what you are working on and give us any feedback in our [Community Slack Channel](https://developer.nexmo.com/slack).
