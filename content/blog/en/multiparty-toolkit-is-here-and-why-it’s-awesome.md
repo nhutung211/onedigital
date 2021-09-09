@@ -1,5 +1,5 @@
 ---
-title: Multiparty Toolkit is here and why it’s awesome!
+title: Multiparty Toolkit Is Here and Why It’s Awesome!
 description: The Vonage Multiparty Toolkit is here! Here are some advantages,
   code samples, demo application and other reasons to give it a try.
 author: dwanehemmings
