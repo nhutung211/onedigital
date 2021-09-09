@@ -113,6 +113,26 @@ await previewPublisher.previewMedia({
 });
 ```
 
+# Screenshare
+
+The final feature of the Multiparty Toolkit that I want to point out is how screensharing is handled.
+
+```javascript
+const startScreensharing = () => {    
+  room.startScreensharing("myScreenshare");
+}
+  
+const stopScreensharing = () => {
+  room.stopScreensharing();
+}
+  
+screenshareStartBtn.addEventListener("click", startScreensharing, false);
+
+screenshareStopBtn.addEventListener("click", stopScreensharing, false);
+```
+That's it! With this few lines of code, you can share your screen and the Multiparty Toolkit will reconfigure the room's layout to make it the priority.
+
+# Well...
 Ready to build something amazing?!
 
 Take a look at the [Multiparty Toolkit documentation](https://tokbox.com/developer/multiparty/) for more details.
