@@ -115,7 +115,7 @@ await previewPublisher.previewMedia({
 
 # Screenshare
 
-The final feature of the Multiparty Toolkit that I want to point out is how screensharing is handled.
+The final feature of the Multiparty Toolkit that I want to point out is how screen sharing is handled.
 
 ```javascript
 const startScreensharing = () => {    
@@ -130,7 +130,7 @@ screenshareStartBtn.addEventListener("click", startScreensharing, false);
 
 screenshareStopBtn.addEventListener("click", stopScreensharing, false);
 ```
-That's it! With this few lines of code, you can share your screen and the Multiparty Toolkit will reconfigure the room's layout to make it the priority.
+That's it! With these few lines of code, you can share your screen and the Multiparty Toolkit will reconfigure the room's layout to make it the priority.
 
 # Well...
 Ready to build something amazing?!
@@ -139,6 +139,4 @@ Take a look at the [Multiparty Toolkit documentation](https://tokbox.com/develop
 
 Play around with the [basic starter project](https://glitch.com/edit/#!/remix/multiparty-tookit-demo?path=README.md%3A1%3A0).
 
-Dive into a more complete \[demo application using React](Link to blog post).
-
-Show us what you are working on and give us any feedback in our [Community Slack Channel](https://developer.nexmo.com/slack).
+Show us what you are working on and give us any feedback in our [Community Slack Channel](https://developer.vonage.com/slack).
