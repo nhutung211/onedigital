@@ -1,5 +1,5 @@
 ---
-title: Build Multiparty Video Apps with ReactJS and Vonage Multiparty Toolkit
+title: Create a Multiparty Video App with the new Vonage Multiparty Toolkit
 description: This blog post will help you develop a Multiparty Video Application
   based on ReactJS and the new Vonage Multiparty Toolkit.
 author: enrico-portolan
@@ -18,12 +18,13 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This blog post will help you develop a Multiparty Video Application based on ReactJS and the new Vonage Multiparty Toolkit. The Multiparty Toolkit provides by default the following features:
-Room and Participant Manager: simplified publishing, subscribing, and stream management logic
-Layout Management: out of the box responsive UI and Layout Manager with customizable components
-Video Quality Optimization (framerate and resolution) based on the number of participants, rendering sizes, CPU, and network conditions
-Network optimization: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
-Ease of use: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
+This blog post will help you develop a Multiparty Video Application based on ReactJS and the new Vonage Multiparty Toolkit.  
+The Multiparty Toolkit provides by default the following features:
+- Room and Participant Manager: simplified publishing, subscribing, and stream management logic
+- Layout Management: out of the box responsive UI and Layout Manager with customizable components
+- Video Quality Optimization (framerate and resolution) based on the number of participants, rendering sizes, CPU, and network conditions
+- Network optimization: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
+- Ease of use: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
 
 ## App Architecture
 
