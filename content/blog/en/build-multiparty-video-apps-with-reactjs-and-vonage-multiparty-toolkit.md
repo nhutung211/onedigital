@@ -1,5 +1,5 @@
 ---
-title: Create a Multiparty Video App with the new Vonage Multiparty Toolkit
+title: Create a Multiparty Video App With the New Vonage Multiparty Toolkit
 description: This blog post will help you develop a Multiparty Video Application
   based on ReactJS and the new Vonage Multiparty Toolkit.
 author: enrico-portolan
@@ -18,13 +18,14 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This blog post will help you develop a Multiparty Video Application based on ReactJS and the new Vonage Multiparty Toolkit.  
+This blog post will help you develop a Multiparty Video Application based on ReactJS and the new Vonage Multiparty Toolkit.\
 The Multiparty Toolkit provides by default the following features:
-- Room and Participant Manager: simplified publishing, subscribing, and stream management logic
-- Layout Management: out of the box responsive UI and Layout Manager with customizable components
-- Video Quality Optimization (framerate and resolution) based on the number of participants, rendering sizes, CPU, and network conditions
-- Network optimization: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
-- Ease of use: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
+
+* Room and Participant Manager: simplified publishing, subscribing, and stream management logic
+* Layout Management: out of the box responsive UI and Layout Manager with customizable components
+* Video Quality Optimization (framerate and resolution) based on the number of participants, rendering sizes, CPU, and network conditions
+* Network optimization: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
+* Ease of use: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
 
 ## App Architecture
 
@@ -42,7 +43,7 @@ The app is based on React Hooks that came with React 16.8. Next, let's have a cl
 
 ### UseRoom
 
-The [UseRoom](https://github.com/nexmo-se/video-api-multiparty-toolkit-sample-app/blob/main/src/hooks/useRoom.js) hook is the one that handles the lifecycle of our video room. Thanks to the Multiparty Toolkit, we don’t have to manage the Session, Publisher, and Subscriber lifecycle.  
+The [UseRoom](https://github.com/nexmo-se/video-api-multiparty-toolkit-sample-app/blob/main/src/hooks/useRoom.js) hook is the one that handles the lifecycle of our video room. Thanks to the Multiparty Toolkit, we don’t have to manage the Session, Publisher, and Subscriber lifecycle.\
 Instead, we only have to instantiate a [Room](https://tokbox.com/developer/multiparty/reference/room.html) object,  then use the `room.join()` method, which in turn will handle everything for us behind the scenes.
 
 First, we need to create a function in charge of initializing our Room object and joining the call. We need to provide our authentication (`apiKey`, `sessionId`, and `token`) and other optional parameters used as publisher settings such as the `userName`, the container where our Room will be visible, and some optional publisher settings.  
@@ -53,7 +54,6 @@ define a custom HTML element for the screensharing view
 You can find the complete list of parameters [here](https://tokbox.com/developer/multiparty/reference/room.html#constructor-options).
 
 ```js
-
 const createCall = useCallback(
     (
       { apikey, sessionId, token },
@@ -94,7 +94,7 @@ const createCall = useCallback(
 
 Once the `Room` object has been initialized, we call the `startRoomListeners` function to start the event listeners on the `Room` object. Then we call the `room.join()` method with some optional `publisherSettings` to join the session. We need the event listeners to notify us about events such as a new participant joins, a new screen sharing stream created, a user is reconnecting to the call, etc.
 
-```js 
+```js
  
 const startRoomListeners = () => {
     if (roomRef.current) {
@@ -128,11 +128,11 @@ const startRoomListeners = () => {
       });
     }
   };
-````
+```
 
 Notice that we also keep track of the session’s participants to be able to show a list of participants. We will create a state variable that gets updated once a participant joins or leaves the room.
 
-Another helpful feature implemented is the _network status component_. This feature will be useful upon user disconnection/reconnection to update the UI, informing the user about their network problems.
+Another helpful feature implemented is the *network status component*. This feature will be useful upon user disconnection/reconnection to update the UI, informing the user about their network problems.
 
 ### UseDevices
 
@@ -202,7 +202,7 @@ We will first get the available devices from our UseDevices hook.
 const { deviceInfo, getDevices } = useDevices();
 ```
 
-Once we initialize the preview publisher with the target element, we call the `previewMedia` method to visualize the media. We’ll also set up some event listeners to handle device access and `audioLevel` events.  
+Once we initialize the preview publisher with the target element, we call the `previewMedia` method to visualize the media. We’ll also set up some event listeners to handle device access and `audioLevel` events.\
 As you can see, we will not call the `getDevices()` function until the user has granted permission to devices (upon the `accessAllowed` event)
 
 ```js
@@ -250,6 +250,7 @@ One of the most important components of our application is the [WaitingRoom](htt
 
 This is what our waiting room looks like:
 
+![Screenshot of waiting room on mobile device](/content/blog/create-a-multiparty-video-app-with-the-new-vonage-multiparty-toolkit/image1.png "Screenshot of waiting room on mobile device")
 
 We have a few state variables that will hold the user’s choice; this is done to allow the user to join the room with the audio or video turned off, set a name, or change the audio devices:
 
@@ -287,9 +288,6 @@ const {
 
 The logic starts once our component is mounted and we’ve got the container for our waiting room. We will create a publisher preview. 
 
-
-
-
 ```js
 useEffect(() => {
     if (waitingRoomVideoContainer.current) {
@@ -325,13 +323,6 @@ useEffect(() => {
 ```
 
 The logic to change devices is almost the same for audio and video. We will explain it for audio, but remember that you can check the implementation of the [WaitingRoom[(https://github.com/nexmo-se/video-api-multiparty-toolkit-sample-app/blob/main/src/components/WaitingRoom/index.js) component.
-
-
-
-
-
-
-
 
 ```js
 useEffect(() => {
