@@ -18,14 +18,14 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This blog post will help you develop a Multiparty Video Application based on ReactJS and the new Vonage Multiparty Toolkit.\
+This blog post will help you develop a Multiparty Video Application based on ReactJS and the new Vonage Multiparty Toolkit. 
 The Multiparty Toolkit provides by default the following features:
 
-* Room and Participant Manager: simplified publishing, subscribing, and stream management logic
-* Layout Management: out of the box responsive UI and Layout Manager with customizable components
-* Video Quality Optimization (framerate and resolution) based on the number of participants, rendering sizes, CPU, and network conditions
-* Network optimization: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
-* Ease of use: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
+* __Room and Participant Manager__: simplified publishing, subscribing, and stream management logic
+* __Layout Management__: out of the box responsive UI and Layout Manager with customizable components
+* __Video Quality Optimization__ (framerate and resolution) based on the number of participants, rendering sizes, CPU, and network conditions
+* __Network optimization__: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
+* __Ease of use__: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
 
 ## App Architecture
 
@@ -43,7 +43,7 @@ The app is based on React Hooks that came with React 16.8. Next, let's have a cl
 
 ### UseRoom
 
-The [UseRoom](https://github.com/nexmo-se/video-api-multiparty-toolkit-sample-app/blob/main/src/hooks/useRoom.js) hook is the one that handles the lifecycle of our video room. Thanks to the Multiparty Toolkit, we don’t have to manage the Session, Publisher, and Subscriber lifecycle.\
+The [UseRoom](https://github.com/nexmo-se/video-api-multiparty-toolkit-sample-app/blob/main/src/hooks/useRoom.js) hook is the one that handles the lifecycle of our video room. Thanks to the Multiparty Toolkit, we don’t have to manage the Session, Publisher, and Subscriber lifecycle. 
 Instead, we only have to instantiate a [Room](https://tokbox.com/developer/multiparty/reference/room.html) object,  then use the `room.join()` method, which in turn will handle everything for us behind the scenes.
 
 First, we need to create a function in charge of initializing our Room object and joining the call. We need to provide our authentication (`apiKey`, `sessionId`, and `token`) and other optional parameters used as publisher settings such as the `userName`, the container where our Room will be visible, and some optional publisher settings.  
@@ -202,7 +202,7 @@ We will first get the available devices from our UseDevices hook.
 const { deviceInfo, getDevices } = useDevices();
 ```
 
-Once we initialize the preview publisher with the target element, we call the `previewMedia` method to visualize the media. We’ll also set up some event listeners to handle device access and `audioLevel` events.\
+Once we initialize the preview publisher with the target element, we call the `previewMedia` method to visualize the media. We’ll also set up some event listeners to handle device access and `audioLevel` events. 
 As you can see, we will not call the `getDevices()` function until the user has granted permission to devices (upon the `accessAllowed` event)
 
 ```js
